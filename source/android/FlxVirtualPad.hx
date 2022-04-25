@@ -7,21 +7,15 @@ import flixel.math.FlxPoint;
 import flixel.util.FlxDestroyUtil;
 import flixel.ui.FlxButton;
 import flixel.graphics.frames.FlxAtlasFrames;
+import flash.diplay.BitmapData
 import flixel.graphics.FlxGraphic;
 
-@:keep @:bitmap("assets/preload/images/virtual-input.png")
-class GraphicVirtualInput extends BitmapData {}
- 
-@:file("assets/preload/images/virtual-input.txt")
-class VirtualInputData extends #if (lime_legacy || nme) ByteArray #else ByteArrayData #end {}
-
-class FlxVirtualPad extends FlxSpriteGroup 
-{
+class FlxVirtualPad extends FlxSpriteGroup{
 	//Actions
 	public var buttonA:FlxButton;
 	public var buttonB:FlxButton;
 	public var buttonC:FlxButton;
-	public var buttonDodge:FlxButton;
+	public var buttonD:FlxButton;
 	public var buttonE:FlxButton;
 	public var buttonV:FlxButton;
 	public var buttonX:FlxButton;
@@ -116,8 +110,8 @@ class FlxVirtualPad extends FlxSpriteGroup
 				actions.add(add(buttonA = createButton(FlxG.width - 44 * 3, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "a")));
 			case B:
 				actions.add(add(buttonB = createButton(FlxG.width - 44 * 3, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "b")));
-			case D:
-				actions.add(add(buttonDodge = createButton(FlxG.width - 44 * 3, FlxG.height - 125 * 3, 44 * 3, 45 * 3, "d")));						
+			case D://Dodge Button
+				actions.add(add(buttonD = createButton(FlxG.width - 44 * 3, FlxG.height - 125 * 3, 44 * 3, 45 * 3, "d")));						
 			case A_B:
 				actions.add(add(buttonA = createButton(FlxG.width - 44 * 3, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "a")));
 				actions.add(add(buttonB = createButton(FlxG.width - 86 * 3, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "b")));
